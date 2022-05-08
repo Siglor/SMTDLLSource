@@ -83,3 +83,4 @@ E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\BDArmory.Core.pdb
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.csproj.CopyComplete
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.dll
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.pdb
+E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.csproj.AssemblyReference.cache

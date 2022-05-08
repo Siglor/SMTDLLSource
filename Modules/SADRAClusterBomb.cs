@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace BDArmory.Modules
 {
-    public class ClusterBomb : PartModule
+    public class SADRAClusterBomb : PartModule
     {
         List<GameObject> submunitions;
         List<GameObject> fairings;
@@ -22,17 +22,15 @@ namespace BDArmory.Modules
         [KSPField(isPersistant = false)]
         public string subExplSoundPath = "BDArmory/Sounds/subExplode";
 
-        [KSPField(isPersistant = true, guiActive = false, guiActiveEditor = true, guiName = "Deploy Delay"),//Deploy Altitude
-         UI_FloatRange(minValue = 0f, maxValue = 25f, stepIncrement = 0.1f, scene = UI_Scene.Editor)]
+        [KSPField(isPersistant = false)]
         public float deployDelay = 2.5f;
 
         [KSPField(isPersistant = true, guiActive = false, guiActiveEditor = true, guiName = "#LOC_BDArmory_DeployAltitude"),//Deploy Altitude
-         UI_FloatRange(minValue = 200f, maxValue = 75000f, stepIncrement = 10f, scene = UI_Scene.Editor)]
+         UI_FloatRange(minValue = 100f, maxValue = 75000f, stepIncrement = 10f, scene = UI_Scene.Editor)]
         public float deployAltitude = 500;
 
-        [KSPField(isPersistant = true, guiActive = false, guiActiveEditor = true, guiName = "Submunition Max Speed"),//Submunition Max Speed
-           UI_FloatRange(minValue = 50f, maxValue = 2500f, stepIncrement = 50f, scene = UI_Scene.Editor)]
-        public float submunitionMaxSpeed = 150;
+        [KSPField(isPersistant = false)]
+        public float submunitionMaxSpeed = 10;
 
         [KSPField(isPersistant = false)]
         public bool swapCollidersOnDeploy = true;
@@ -123,7 +121,7 @@ namespace BDArmory.Modules
                 subRB.velocity = part.rb.velocity + Krakensbane.GetFrameVelocityV3f() +
                                  (UnityEngine.Random.Range(submunitionMaxSpeed / 10, submunitionMaxSpeed) * direction);
 
-                SadraSubmunition subScript = sub.Current.AddComponent<SadraSubmunition>();
+                Submunition subScript = sub.Current.AddComponent<Submunition>();
                 subScript.enabled = true;
                 subScript.deployed = true;
                 subScript.blastForce = missileLauncher.GetTntMass();
@@ -144,7 +142,7 @@ namespace BDArmory.Modules
                 fRB.velocity = part.rb.velocity + Krakensbane.GetFrameVelocityV3f() + ((submunitionMaxSpeed + 2) * direction);
                 fairing.Current.AddComponent<KSPForceApplier>();
                 fairing.Current.GetComponent<KSPForceApplier>().drag = 0.2f;
-                SADRAClusterBombFairing fairingScript = fairing.Current.AddComponent<SADRAClusterBombFairing>();
+                ClusterBombFairing fairingScript = fairing.Current.AddComponent<ClusterBombFairing>();
                 fairingScript.deployed = true;
             }
 
@@ -165,7 +163,7 @@ namespace BDArmory.Modules
         }
     }
 
-    public class SadraSubmunition : MonoBehaviour
+    public class Submunition : MonoBehaviour
     {
         public bool deployed;
         public float blastRadius;
@@ -250,7 +248,7 @@ namespace BDArmory.Modules
 
         void Detonate(Vector3 pos)
         {
-            //ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
+           // ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
             Destroy(gameObject);
         }
 
@@ -271,7 +269,7 @@ namespace BDArmory.Modules
         }
     }
 
-    public class SADRAClusterBombFairing : MonoBehaviour
+    public class ClusterBombFairing : MonoBehaviour
     {
         public bool deployed;
 
