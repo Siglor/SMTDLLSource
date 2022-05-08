@@ -26,8 +26,8 @@ namespace BDArmory.Modules
         public float deployDelay = 2.5f;
 
         [KSPField(isPersistant = true, guiActive = false, guiActiveEditor = true, guiName = "#LOC_BDArmory_DeployAltitude"),//Deploy Altitude
-         UI_FloatRange(minValue = 100f, maxValue = 75000f, stepIncrement = 10f, scene = UI_Scene.Editor)]
-        public float deployAltitude = 500;
+         UI_FloatRange(minValue = 100f, maxValue = 2500f, stepIncrement = 10f, scene = UI_Scene.Editor)]
+        public float deployAltitude = 400;
 
         [KSPField(isPersistant = false)]
         public float submunitionMaxSpeed = 10;
@@ -190,7 +190,7 @@ namespace BDArmory.Modules
         {
             ContactPoint contact = col.contacts[0];
             Vector3 pos = contact.point;
-           // ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
+            ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
         }
 
         void FixedUpdate()
@@ -248,7 +248,7 @@ namespace BDArmory.Modules
 
         void Detonate(Vector3 pos)
         {
-           // ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
+            ExplosionFx.CreateExplosion(pos, blastForce, subExplModelPath, subExplSoundPath, true);
             Destroy(gameObject);
         }
 

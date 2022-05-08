@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMT</RootNamespace>
     <AssemblyName>SMT</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,11 +38,13 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\..\SteamLibrary\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="BDArmory">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\Kerbal Space Program\GameData\BDArmory\Plugins\BDArmory.dll</HintPath>
+    <Reference Include="BDArmory, Version=1.4.7.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Mods and Tools\KSP\DevWorking\GameData\BDArmory\Plugins\BDArmory.dll</HintPath>
     </Reference>
-    <Reference Include="BDArmory.Core">
-      <HintPath>..\..\..\SteamLibrary\steamapps\common\Kerbal Space Program\GameData\BDArmory\Plugins\BDArmory.Core.dll</HintPath>
+    <Reference Include="BDArmory.Core, Version=1.4.7.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Mods and Tools\KSP\DevWorking\GameData\BDArmory\Plugins\BDArmory.Core.dll</HintPath>
     </Reference>
     <Reference Include="I18N">
       <HintPath>..\..\..\SteamLibrary\steamapps\common\Kerbal Space Program\KSP_x64_Data\Managed\I18N.dll</HintPath>
@@ -197,7 +200,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modules\SADRAaiPilot.cs" />
-    <Compile Include="Modules\SADRAClusterBomb.cs" />
+    <Compile Include="Modules\SADRACB.cs" />
+    <Compile Include="Modules\SMTCatMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

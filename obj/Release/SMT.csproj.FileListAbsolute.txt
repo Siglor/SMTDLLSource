@@ -78,8 +78,6 @@ E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\UnityEngine.StreamingModul
 E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\UnityEngine.TextCoreModule.dll
 E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\UnityEngine.SpriteShapeModule.dll
 E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\UnityEngine.InputModule.dll
-E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\BDArmory.pdb
-E:\Game and Mod Development\Kerbal C#\SMT\bin\Release\BDArmory.Core.pdb
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.csproj.CopyComplete
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.dll
 E:\Game and Mod Development\Kerbal C#\SMT\obj\Release\SMT.pdb
